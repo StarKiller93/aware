@@ -162,6 +162,7 @@ span
 	padding: 30px
 	width: 240px
 	opacity: 0
+	z-index: 200
 	transition: opacity 0.3s, margin-top 0.4s
 	margin-top: 30px
 	visability: hidden
@@ -445,16 +446,195 @@ span
 		font-size: 12px
 		font-style: italic
 
-.header-inner 
+.filter
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	border-bottom: 1px solid #ececec
+	min-height: 60px
+	&-sidebar
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		padding: 15px 30px
+		width: 240px
+		flex: none
+		border-right: 1px solid #ececec
+	&-content
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		padding: 15px 30px
+		flex: 1
+	&__title
+		color: #979797
+		line-height: 16px
+		font-size: 12px
+	&-list
+		list-style: none
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		margin-left: auto
+		&__item
+			margin-left: 10px
+			&:first-child
+				margin-left: 0
+			&.active .filter-list__link
+				color: $color 
+		&__link
+			font-size: 16px
+			color: #d5d5d5
+			&:hover
+				color: #888
+
+.toggle-filter
+	color: #d5d5d5
+	font-size: 16px
+	background: transparent
+	border: none
+	padding: 0
+	margin-right: 20px
+	transition: all 0.3s
+	&:hover
+		color: $color-blue
+	.sr-only
+		display: none
+
+.sort
+	display: flex
+	position: relative
+	overflow: hidden
+
+	input
+		position: absolute
+		left: -999px
+	input:checked + .sort__item
+		color: #fff
+		background-color: $color
+		padding: 0 20px
+		[class*="icon"]
+			.path1:before
+				content: '\e902'
+				color: #fff
+	&__item
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		text-align: center
+		align-items: center
+		justify-content: center
+		margin-left: 20px
+		height: 30px
+		padding: 0 20px
+		font-size: 12px
+		font-weight: 400
+		line-height: 16px
+		border-radius: 20px
+		cursor: pointer
+		&:hover
+			color: $color-blue
+		[class*="icon"]
+			color: #d5d5d5
+			font-size: 12px
+			margin-left: 5px 
 
 
+.hide
+	position: absolute
+	left: 0
+	top: 0
+	height: 0
+	width: 0
+	overflow: hidden
+	z-index: -1
+	opacity: 0
+	visability: hidden
 
+.tab-cont
+	opacity: 1
+	transition: opacity 0.4s
+	visability: visable
+	&.hide
+		opacity: 0
 
+.box-main
+	display: -webkit-flex
+	display: -moz-flex
+	display: -ms-flex
+	display: -o-flex
+	display: flex
+	.sidebar
+		width: 240px
+		flex: none
+		border-right: 1px solid #ececec
+	.content
+		flex: 1
 
+.accordion
+	border-bottom: 1px solid #ececec
+	&__head
+		height: 70px
+		display: -webkit-flex
+		display: -moz-flex
+		display: -ms-flex
+		display: -o-flex
+		display: flex
+		align-items: center
+		justify-content: space-between
+		padding: 15px 30px
+		border-top: 1px solid #ececec
+		cursor: pointer
+		&.open
+			[class*="icon"]:before
+				content: '\e909'
+		&:first-child
+			border-top: none
+		[class*="icon"]
+			color: #b8b8b8
+			font-size: 18px
+			margin-left: 10px
+	&__title
+		font-family: $font-family2
+		font-size: 14px
+		font-weight: 700
+		text-transform: uppercase
 
+	&__body
+		padding: 0 30px 25px
 
-
-
+.check-list
+	list-style: none
+	&__item
+		margin-bottom: 10px
+		&:last-child
+			margin-bottom: 10px
+	&__text
+		color: #222222
+		font-size: 12px
+		font-weight: 400
+		line-height: 18px
+		cursor: pointer
+	&--column
+		.check-list__item
+			display: inline-block
+			vertical-align: top
+			margin-right: -4px
+			width: 50%
+			padding-right: 10px
 
 
 
